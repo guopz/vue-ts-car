@@ -1,4 +1,8 @@
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+let { NODE_ENV } = process.env;
 module.exports = {
+  publicPath: NODE_ENV === 'production' ? 'Ts/dist/' : './',
+  // publicPath: './',
   css: {
     loaderOptions: {
       css: {},
@@ -11,7 +15,29 @@ module.exports = {
       }
     }
   },
-  configureWebpack: config => {
+  configureWebpack: {
+    optimization: {
+      minimizer: [
+        new UglifyJsPlugin({
+          uglifyOptions: {
+            compress: {
+              // warnings: true,
+              drop_console: true, //注释console
+              drop_debugger: true, //注释debugger
+              pure_funcs: ['console.log'] //移除console
+            }
+          }
+        })
+      ]
+    }
+  },
+  chainWebpack(config){
+    config.externals({
+      'vue': 'Vue',
+      'vue-router': 'VueRouter',
+      'vuex': 'Vuex',
+      'axios': 'axios'
+    })
   },
   devServer: {
     // 配置代理
