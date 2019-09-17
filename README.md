@@ -86,15 +86,16 @@ function buildName(firstName: string, ...restOfName: string[]) {
 ```
 ----
 #### 插件 
-> 1. vue-class-component
->2. [vue-property-decorator](https://www.npmjs.com/package/vue-property-decorator)
-在 vue-class-component 上增强更多的结合 Vue 特性的装饰器
->3. [vuex-class](hhttps://www.npmjs.com/package/vuex-class)
+>1. vue-class-component <br />
+>2. [vue-property-decorator](https://www.npmjs.com/package/vue-property-decorator) <br />
+在vue-class-component 上增强更多的结合 Vue 特性的装饰器
+>3. [vuex-class](hhttps://www.npmjs.com/package/vuex-class) <br />
 基于vue-class-component对Vuex提供的装饰器
 
 #### 项目优化（近期）
 1. 生成环境删除 console; <br />
 2. 优化打包体积（vue, vue-router, vuex, axios）;
 
+---
 #### 项目预览
 [跳转地址](https://guopz.github.io/Ts/dist/#/)
