@@ -1,7 +1,7 @@
 
 <!-- ### [点击前往](https://segmentfault.com/a/1190000018964794) -->
 
-#### TypeScript
+### TypeScript
 
 1. TypeScript是一种由微软开发的自由和开源的编程语言，2012年10月推出首个公开版本。
 2. TypeScript 是 JavaScript 的超集，扩展了 JavaScript 的语法，因此现有的 JavaScript 代码可与 TypeScript 一起工作无需任何修改，TypeScript 通过类型注解提供编译时的静态类型检查。TypeScript 可处理已有的 JavaScript 代码，并只对其中的 TypeScript 代码进行编译。
@@ -87,7 +87,14 @@ function buildName(firstName: string, ...restOfName: string[]) {
 ----
 #### 插件 
 > 1. vue-class-component
->2. vue-property-decorator
+>2. [vue-property-decorator](https://www.npmjs.com/package/vue-property-decorator)
 在 vue-class-component 上增强更多的结合 Vue 特性的装饰器
->3. vuex-class
+>3. [vuex-class](hhttps://www.npmjs.com/package/vuex-class)
 基于vue-class-component对Vuex提供的装饰器
+
+#### 项目优化（近期）
+1. 生成环境删除 console; <br />
+2. 优化打包体积（vue, vue-router, vuex, axios）;
+
+#### 项目预览
+[跳转地址](https://guopz.github.io/Ts/dist/#/)
