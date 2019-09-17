@@ -89,7 +89,7 @@ function buildName(firstName: string, ...restOfName: string[]) {
 >1. vue-class-component <br />
 >2. [vue-property-decorator](https://www.npmjs.com/package/vue-property-decorator) <br />
 在vue-class-component 上增强更多的结合 Vue 特性的装饰器
->3. [vuex-class](hhttps://www.npmjs.com/package/vuex-class) <br />
+>3. [vuex-class](https://www.npmjs.com/package/vuex-class) <br />
 基于vue-class-component对Vuex提供的装饰器
 
 #### 项目优化（近期）
