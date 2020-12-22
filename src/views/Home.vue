@@ -16,6 +16,7 @@
           </div>
         </van-grid-item>
       </van-grid>
+      <test></test>
     </div>
   </div>
 </template>
@@ -37,6 +38,7 @@ import {
 import GridContent from "@/layout/GridContent.vue";
 import Swiper from "@/components/swiper/index.vue";
 import { SwiperType } from "@/utils/interface";
+import Test from './Test.vue';
 
 const homeModule = namespace('home');
 @Component({
@@ -47,7 +49,8 @@ const homeModule = namespace('home');
     [Skeleton.name]: Skeleton,
     [GridItem.name]: GridItem,
     GridContent,
-    Swiper
+    Swiper,
+    Test
   }
 })
 export default class extends Vue {
@@ -59,6 +62,8 @@ export default class extends Vue {
   @homeModule.Action("getGridItems") private actionGridItems: any;
   @homeModule.Getter("swiperImgs") private getterSwiperImgs: any;
 
+  @homeModule.Action getGridItems: any
+
   async getSwipers() {
     if (this.getterSwiperImgs.length === 0) {
       try {
@@ -68,14 +73,14 @@ export default class extends Vue {
         console.log(e);
       }
     } else {
-      console.log("VUEX内获取图片信息！");
+      // console.log("VUEX内获取图片信息！");
       this.swiperImgsData = this.getterSwiperImgs;
     }
   }
   async getLists() {
     try {
       let res = await this.actionGridItems();
-      console.log("Request当前List信息 ==>", res);
+      // console.log("Request当前List信息 ==>", res);
       this.gridItems = res;
     } catch (e) {
       console.log(e);
@@ -96,6 +101,7 @@ export default class extends Vue {
     this.getSwipers();
     this.getLists();
     setTimeout(this.skeletonNotShow, 1000); // api获取首页数据
+    console.log('gather ==>', this.getGridItems().then((res:any) => console.log(res)));
   }
   // Dialog 提示跳转
   toGoDetail(_params: any) {
@@ -123,7 +129,7 @@ export default class extends Vue {
       [propName: string]: any
     }
     let typeFn = (a: type) => {
-      console.log(a.key);
+      // console.log(a.key);
     }
     typeFn({key: 1, age:23, count: '23'});
     

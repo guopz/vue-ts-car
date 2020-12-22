@@ -18,13 +18,13 @@ const mutations: any = {
 
 const actions: any = {
   async swiperImgs({ commit }: any, _params: any) {
-    console.log('模拟请求出Banner数据-swiperImgs', _params);
+    // console.log('模拟请求出Banner数据-swiperImgs', _params);
     const res: any = {
       Code: 1,
       List: [
-        { src: require("../../assets/20180611161607023216.jpg"), name: '' },
-        { src: require("../../assets/20180611161607023216.jpg"), name: '' },
-        { src: require("../../assets/20180611161607023216.jpg"), name: '' }]
+        { src: require("../../assets/202006040440.jpg"), name: '大益茶壶' },
+        { src: require("../../assets/202006040441.jpg"), name: '大益茶' }
+      ]
     };
     let JSON: any = _params.type === res.Code ? res.List : '暂无数据！';
     commit('saveSwiperImgs', JSON);
@@ -35,26 +35,26 @@ const actions: any = {
       List: [
         {
           icon: 'meishi2',
-          name: '阅读',
+          name: '茶品',
           inform: 1
         },
         {
           icon: 'dianying',
-          name: '视频',
+          name: '茶器',
           inform: 1
         },
         {
           icon: 'yule',
-          name: '娱乐',
+          name: '茶服',
           inform: 1
         },
         {
           icon: 'waimai',
-          name: '外卖'
+          name: '益元素'
         },
         {
           icon: 'zhusujiedai',
-          name: '酒店'
+          name: '拾春记'
         },
         {
           icon: 'chaoshi',

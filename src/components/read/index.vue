@@ -32,7 +32,7 @@
 <script lang='ts'>
 import { Component, Vue, Watch, Prop } from "vue-property-decorator";
 import { Icon } from "vant";
-import { VideoType } from "@/utils/interface";
+import { SwiperType } from "@/utils/interface";
 
 @Component({
   components: {
@@ -42,6 +42,12 @@ import { VideoType } from "@/utils/interface";
 export default class extends Vue {
   @Prop()
   private list!: any[];
+  mounted() {
+    let name: SwiperType = {
+      type: 123123
+    }
+    console.log(name);
+  }
 }
 </script>
 <style lang="scss" scoped>

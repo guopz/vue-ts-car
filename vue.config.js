@@ -2,7 +2,6 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 let { NODE_ENV } = process.env;
 module.exports = {
   publicPath: NODE_ENV === 'production' ? 'Ts/dist/' : './',
-  // publicPath: './',
   css: {
     loaderOptions: {
       css: {},

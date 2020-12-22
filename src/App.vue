@@ -1,7 +1,5 @@
 <template>
   <div id="app">
-    <!-- <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>-->
     <Header></Header>
     <router-view />
   </div>
@@ -12,7 +10,7 @@ import Header from "@/components/header/index.vue";
 import "../public/css/icon.css";
 
 @Component({
-  name: 'App',
+  name: "App",
   components: {
     Header
   }
