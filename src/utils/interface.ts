@@ -1,6 +1,10 @@
 
-export interface SwiperType {
-    type: number
+interface TypeBase {
+  type: number
+}
+
+export interface SwiperType extends TypeBase {
+  index?: number
 }
 
 export interface VideoType {
@@ -12,4 +16,19 @@ export interface VideoType {
   name: string,
   text: string,
   [name: string]: any
+}
+
+interface AboutQueryBase {
+  type: string,
+  name: string,
+  [propsName: string]: any
+}
+export interface AboutQuery {
+  query: AboutQueryBase
+}
+
+export interface HomeQuery {
+  icon: string,
+  inform: number,
+  name: string
 }

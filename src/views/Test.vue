@@ -17,7 +17,7 @@ export default class extends Vue {
       func1(): string;
     }
     // 泛型
-    interface Test {
+    interface Test<y> {
       <T>(args: T): T;
     }
 
@@ -25,7 +25,7 @@ export default class extends Vue {
       return args;
     }
 
-    let myTest: Test = myfn;
+    let myTest: Test<string> = myfn;
     // console.log(myTest);
   }
 }

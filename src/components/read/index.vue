@@ -42,12 +42,6 @@ import { SwiperType } from "@/utils/interface";
 export default class extends Vue {
   @Prop()
   private list!: any[];
-  mounted() {
-    let name: SwiperType = {
-      type: 123123
-    }
-    console.log(name);
-  }
 }
 </script>
 <style lang="scss" scoped>

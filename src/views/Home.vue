@@ -37,7 +37,7 @@ import {
 } from "vant";
 import GridContent from "@/layout/GridContent.vue";
 import Swiper from "@/components/swiper/index.vue";
-import { SwiperType } from "@/utils/interface";
+import { SwiperType, HomeQuery } from "@/utils/interface";
 import Test from './Test.vue';
 
 const homeModule = namespace('home');
@@ -62,7 +62,7 @@ export default class extends Vue {
   @homeModule.Action("getGridItems") private actionGridItems: any;
   @homeModule.Getter("swiperImgs") private getterSwiperImgs: any;
 
-  @homeModule.Action getGridItems: any
+  // @homeModule.Action getGridItems: any
 
   async getSwipers() {
     if (this.getterSwiperImgs.length === 0) {
@@ -101,10 +101,10 @@ export default class extends Vue {
     this.getSwipers();
     this.getLists();
     setTimeout(this.skeletonNotShow, 1000); // api获取首页数据
-    console.log('gather ==>', this.getGridItems().then((res:any) => console.log(res)));
+    // console.log('gather ==>', this.getGridItems().then((res:any) => console.log(res)));
   }
   // Dialog 提示跳转
-  toGoDetail(_params: any) {
+  toGoDetail(_params: HomeQuery) {
     console.log("toGoDetail ==>", _params);
     Dialog.confirm({
       title: _params.name,
@@ -112,7 +112,7 @@ export default class extends Vue {
     })
       .then(() => {
         // on confirm
-        this.$router.push({ path: "/another", query: { type: _params.icon, name:  _params.name } });
+        this.$router.push({ path: "/detail", query: { type: _params.icon, name:  _params.name } });
       })
       .catch(() => {
         // on cancel

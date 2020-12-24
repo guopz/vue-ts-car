@@ -40,16 +40,20 @@
 <script lang='ts'>
 import { Component, Vue, Watch, Prop } from "vue-property-decorator";
 import { Icon } from "vant";
-import { VideoType } from "@/utils/interface";
+import { VideoType, AboutQuery } from "@/utils/interface";
 
 @Component({
   components: {
     [Icon.name]: Icon
   }
 })
-export default class extends Vue {
-  @Prop()
-	private list!: any[];
+export default class Video extends Vue {
+  @Prop() private list!: VideoType[];
+
+	@Watch('list')
+	private watchList(val: any[]) {
+		console.log('watchList ==>', val);
+	}
 }
 </script>
 <style lang="scss" scoped>
